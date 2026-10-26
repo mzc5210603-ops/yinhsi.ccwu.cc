@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>留白画室 · ATELIER</title>
+  <meta name="description" content="一块画布，一支笔，与留白相处。极简在线画板。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ 展签 ═══ -->
+  <header class="label">
+    <h1>留 白 画 室</h1>
+    <span class="label-en">ATELIER — ONE CANVAS, ONE LINE</span>
+  </header>
+
+  <!-- ═══ 画布 ═══ -->
+  <main class="hall">
+    <div class="easel" id="easel">
+      <canvas id="canvas"></canvas>
+      <span class="easel-corner tl"></span><span class="easel-corner tr"></span>
+      <span class="easel-corner bl"></span><span class="easel-corner br"></span>
+    </div>
+  </main>
+
+  <!-- ═══ 悬浮工具岛 ═══ -->
+  <nav class="island" id="island">
+
+    <!-- 工具 -->
+    <div class="isle-group">
+      <button class="tool on" data-tool="pen" title="画笔">
+        <svg viewBox="0 0 24 24"><path d="M4 20l4-1L20 7l-3-3L5 16l-1 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="tool" data-tool="eraser" title="橡皮">
+        <svg viewBox="0 0 24 24"><path d="M7 21h10M5 14l7-7 5 5-7 7H7l-2-2 0 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <span class="isle-div"></span>
+
+    <!-- 颜色 -->
+    <div class="isle-group colors">
+      <button class="dot on" data-color="#1a1a1a" style="background:#1a1a1a" title="墨黑"></button>
+      <button class="dot" data-color="#ff5c00" style="background:#ff5c00" title="橙"></button>
+      <button class="dot" data-color="#9a9a9a" style="background:#9a9a9a" title="灰"></button>
+      <input type="color" class="dot custom" id="customColor" value="#ff5c00" title="自定颜色" />
+    </div>
+
+    <span class="isle-div"></span>
+
+    <!-- 粗细 -->
+    <div class="isle-group size">
+      <span class="size-dot" id="sizeDot"></span>
+      <input type="range" id="sizeRange" min="1" max="48" value="4" title="笔触粗细" />
+    </div>
+
+    <span class="isle-div"></span>
+
+    <!-- 操作 -->
+    <div class="isle-group">
+      <button class="tool" id="btnUndo" title="撤销">
+        <svg viewBox="0 0 24 24"><path d="M8 5L3 10l5 5M3 10h11a6 6 0 016 6v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="tool" id="btnClear" title="清空">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="tool accent" id="btnSave" title="下载 PNG">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
